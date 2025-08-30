@@ -6,10 +6,16 @@
     height: 100%;
     padding: 8px;
     overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.Chat::-webkit-scrollbar {
+    display: none;/* Chrome, Safari, Opera */
 }
 
 .Message {
-    max-width: 90%;
+    max-width: 90%; 
     padding: 8px 16px;
     border-radius: 16px;
     font-size: 14px;
