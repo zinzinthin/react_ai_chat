@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TextAreaAutoSize from 'react-textarea-autosize';
 import styles from './Control.module.css'
 
 export function Control({ onSend }) {
@@ -26,7 +27,7 @@ export function Control({ onSend }) {
     return (
         <div className={styles.Controls}>
             <div className={styles.TextAreaContainer}>
-                <textarea
+                <TextAreaAutoSize
                     className={styles.TextArea}
                     placeholder='Message AI Chatbot'
                     value={content}
