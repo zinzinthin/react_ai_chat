@@ -38,7 +38,7 @@
   fill: light-dark(#f3f3f3, #171717);
 }
 
-.TextArea:disabled,
+.TextAreaAutoSize:disabled,
 .Button:disabled {
   opacity: 0.35;
 }

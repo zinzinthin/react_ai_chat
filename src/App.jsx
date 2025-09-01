@@ -46,7 +46,7 @@ function App() {
 
       </div>
 
-      <Control onSend={handleContentSend} />
+      <Control isDisabled={isLoading} onSend={handleContentSend} />
 
     </div>
   )
