@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TextAreaAutoSize from 'react-textarea-autosize';
 import styles from './Control.module.css'
 
 export function Control({ isDisabled = false, onSend }) {
 
+    const textareaRef = useRef(null);
     const [content, setContent] = useState("");
+
+    useEffect(() => {
+        if (!isDisabled) {
+            textareaRef.current.focus();
+        }
+    }, [isDisabled])
 
     function handleContentChange(event) {
         setContent(event.target.value);
@@ -28,6 +35,7 @@ export function Control({ isDisabled = false, onSend }) {
         <div className={styles.Controls}>
             <div className={styles.TextAreaContainer}>
                 <TextAreaAutoSize
+                    ref={textareaRef}
                     className={styles.TextArea}
                     disabled={isDisabled}
                     placeholder='Message AI Chatbot'
